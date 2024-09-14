@@ -157,12 +157,3 @@ if __name__ == "__main__":
     for customer, items in min_results:
         print(f"Customer no. {customer} bought the smallest number of products - {items}")
 
-def members_count (membership:str):
-    with db_connection():
-        count = sqlite_lib.run_query_select(f'SELECT COUNT ("Customer ID")'
-                                            f'FROM "E-commerce Customer Behavior - Sheet1"'
-                                            f'WHERE "Membership Type" = "{membership}" ')
-    return count[0][0]
-
-print(members_count('Gold'))
-
